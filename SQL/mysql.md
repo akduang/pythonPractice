@@ -38,3 +38,20 @@ where director Not like "John Lasseter"
 SELECT * FROM movies
 where title like "%WALL-%"
 ;
+
+SELECT distinct director FROM movies
+;
+
+SELECT * FROM movies
+order by year Desc
+Limit 4 
+;
+
+SELECT * FROM movies
+order by Title asc
+Limit 5 
+
+SELECT * FROM movies
+order by Title asc
+Limit 5 offset 5  
+;
