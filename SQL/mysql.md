@@ -238,7 +238,7 @@ Exercise 13 — Tasks
 INSERT INTO boxoffice VALUES (4, 8.7, 340000000, 270000000);
 
 ```
-Exercise 13 — Tasks
+Exercise 14 — Tasks
 ```sql
 #The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
 UPDATE Movies
@@ -257,7 +257,7 @@ SET director = "Lee Unkrich", title = "Toy Story 3"
 where title = "Toy Story 8"
 
 ```
-Exercise 16 — Tasks
+Exercise 15 — Tasks
 ```sql
 #This database is getting too big, lets remove all movies that were released before 2005.
 delete from movies
