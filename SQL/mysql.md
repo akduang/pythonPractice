@@ -121,5 +121,99 @@ Lesson 7
 
 ```sql
 #Find the list of all buildings that have employees
+SELECT  distinct Building
+FROM Employees
+  Left JOIN Buildings
+    ON Employees.Building = Buildings.Building_name;
+#Find the list of all buildings and their capacity
+SELECT * FROM buildings;
+#answer
+
+#List all buildings and the distinct employee roles in each building (including empty buildings) 
+SELECT  distinct building_name,role,building
+FROM Employees
+  Left JOIN Buildings
+    ON Employees.Building = Buildings.Building_name;
+#answer
+SELECT DISTINCT building_name, role 
+FROM buildings 
+  LEFT JOIN employees
+    ON building_name = building;
+
+```
+
+Lesson 8
+```sql
+#Find the name and role of all employees who have not been assigned to a building 
+SELECT Name,role FROM employees
+where 	Building is null
+;
+
+#Find the names of the buildings that hold no employees
+SELECT Building_name
+FROM buildings 
+  LEFT JOIN employees
+    ON building_name = building
+where Name is null
+;
+```
+
+Lesson 9
+```sql
+#List all movies and their combined sales in millions of dollars 
+#answer
+SELECT title, (domestic_sales + international_sales) / 1000000 AS gross_sales_millions
+FROM movies
+  JOIN boxoffice
+    ON movies.id = boxoffice.movie_id;
+#List all movies and their ratings in percent
+#answer
+SELECT title, rating * 10 AS rating_percent
+FROM movies
+  JOIN boxoffice
+    ON movies.id = boxoffice.movie_id;
+#List all movies that were released on even number years
+#answer
+SELECT title, year
+FROM movies
+WHERE year % 2 = 0;
+
+```
+
+Lesson 10
+```sql
+#Find the longest time that an employee has been at the studio 
+SELECT name,Max(Years_employed) FROM employees
+
+#For each role, find the average number of years employed by employees in that role
+#answer
+SELECT role, AVG(years_employed) as Average_years_employed
+FROM employees
+GROUP BY role;
+#Find the total number of employee years worked in each building 
+SELECT building, Sum(years_employed) as Sum_years_employed
+FROM employees
+GROUP BY building;
+```
+
+Lesson 11
+```sql
+#Find the number of Artists in the studio (without a HAVING clause) 
+SELECT count(Role) as Artists_Num FROM employees
+where Role = "Artist"
+#Find the number of Employees of each role in the studio
+SELECT distinct role,count(Role) as Artists_Num FROM employees
+Group by role
+#Find the total number of years employed by all Engineers 
+#answer
+SELECT role, SUM(years_employed)
+FROM employees
+GROUP BY role
+HAVING role = "Engineer";
+```
+
+Lesson 12
+```sql
+#Find the number of movies each director has directed
 
 ```
