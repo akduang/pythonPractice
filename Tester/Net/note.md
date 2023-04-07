@@ -1,3 +1,6 @@
+# 存储工具
+
+This is a file with a top-level heading
 session和cookie的区别
 前后端交互
 
@@ -9,7 +12,7 @@ http协议如何保证数据在传输过程中不丢失
 
 cookie和session
 
-b/s架构 
+b/s架构
 
 cookie 客户端，可以伪造，存储在本地，用户看不见
 session 服务器 数据库-->一般redis
@@ -21,7 +24,6 @@ cookie在客户端的头信息中
 seesion在服务端存储
 
 session验证需要cookie带一个字段，禁用cookie就没法用
-
 
 osi网络分层
 应用层 为应用程序提供服务
